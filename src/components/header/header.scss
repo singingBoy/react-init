@@ -1,0 +1,30 @@
+.header-wrapper {
+  height: 60px;
+  padding: 0 100px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.header-logo {
+  width: 140px;
+  height: 60px;
+  background: url("../../assets/blog-logo.png") no-repeat center;
+  background-size: contain;
+}
+
+.header-link {
+  color: #f1f1f1;
+  display: flex;
+  align-items: center;
+}
+
+.link-item {
+  padding: 10px;
+  &.active {
+    color: #fff;
+    &::before {
+      content: '1111';
+    }
+  }
+}
