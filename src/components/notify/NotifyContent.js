@@ -1,7 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
-import Button from '@material-ui/core/Button';
 import CheckCircleIcon from '@material-ui/icons/CheckCircle';
 import ErrorIcon from '@material-ui/icons/Error';
 import InfoIcon from '@material-ui/icons/Info';
@@ -19,32 +18,6 @@ const statusIcon = {
   error: ErrorIcon,
   info: InfoIcon,
 };
-
-const statusTheme = theme => ({
-  success: {
-    backgroundColor: green[600],
-  },
-  error: {
-    backgroundColor: theme.palette.error.dark,
-  },
-  info: {
-    backgroundColor: theme.palette.primary.dark,
-  },
-  warning: {
-    backgroundColor: amber[700],
-  },
-  icon: {
-    fontSize: 20,
-  },
-  iconVariant: {
-    opacity: 0.9,
-    marginRight: theme.spacing.unit,
-  },
-  message: {
-    display: 'flex',
-    alignItems: 'center',
-  },
-});
 
 function NotifyContent({
   classes, className, message, onClose, variant, ...other
@@ -83,5 +56,31 @@ NotifyContent.propTypes = {
   onClose: PropTypes.func,
   variant: PropTypes.oneOf(['success', 'warning', 'error', 'info']).isRequired,
 };
+
+const statusTheme = theme => ({
+    success: {
+        backgroundColor: green[600],
+    },
+    error: {
+        backgroundColor: theme.palette.error.dark,
+    },
+    info: {
+        backgroundColor: theme.palette.primary.dark,
+    },
+    warning: {
+        backgroundColor: amber[700],
+    },
+    icon: {
+        fontSize: 20,
+    },
+    iconVariant: {
+        opacity: 0.9,
+        marginRight: theme.spacing.unit,
+    },
+    message: {
+        display: 'flex',
+        alignItems: 'center',
+    },
+});
 
 export default withStyles(statusTheme)(NotifyContent);
