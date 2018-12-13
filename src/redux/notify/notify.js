@@ -3,5 +3,5 @@ export default {
   open: false,
   vertical: 'top',
   horizontal: 'center',
-  variant: '',
+  variant: 'info',
 }

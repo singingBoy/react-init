@@ -1,8 +1,9 @@
-import React, { lazy, Suspense, Fragment, Component } from 'react';
+import React, { lazy, Suspense, Component } from 'react';
 import {HashRouter as Router, Route, Switch} from "react-router-dom";
 import { Provider } from 'react-redux';
 import { createStore, applyMiddleware } from 'redux';
 import thunk from 'redux-thunk';
+import Theme from './components/theme/theme';
 import Error from './pages/error/Error';
 import {Header, Loading, Notify} from './components'
 import history from './utils/history';
@@ -32,7 +33,7 @@ export default class App extends Component{
     return (
         <Provider store={store}>
             <Router>
-                <Fragment>
+                <Theme>
                     <Header />
                     <Error>
                         <Suspense fallback={<Loading/>}>
@@ -46,7 +47,7 @@ export default class App extends Component{
                         </Suspense>
                     </Error>
                     <Notify />
-                </Fragment>
+                </Theme>
             </Router>
         </Provider>
     );

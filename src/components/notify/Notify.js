@@ -7,10 +7,14 @@ import {closeNotify, showNotify} from "../../redux/notify/actions";
 class Notify extends React.Component {
   constructor(props) {
     super(props);
-    console.log(props)
     this.state = {
-      open: props.notify.open,
+      ...props.notify,
     };
+  }
+  componentWillReceiveProps(nextProps) {
+    this.setState({
+      ...nextProps.notify,
+    })
   }
   handleClose = (event, reason) => {
     if (reason === 'clickaway') {
@@ -20,21 +24,28 @@ class Notify extends React.Component {
   };
 
   render() {
+    const {
+      message,
+      open,
+      vertical,
+      horizontal,
+      variant,
+    } = this.state;
     return (
       <div>
         <Snackbar
           anchorOrigin={{
-            vertical: 'bottom',
-            horizontal: 'left',
+            vertical,
+            horizontal,
           }}
-          open={this.state.open}
+          open={open}
           autoHideDuration={2000}
           onClose={this.handleClose}
         >
           <NotifyContent
             onClose={this.handleClose}
-            variant="success"
-            message="This is a success message!"
+            variant={variant}
+            message={message}
           />
         </Snackbar>
       </div>

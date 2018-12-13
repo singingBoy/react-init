@@ -14,7 +14,7 @@ export default class Header extends Component{
         const { activeNav } = this.state;
         return(
             <header className='header-wrapper'>
-                <div className='header-logo1'></div>
+                <div className='header-logo'></div>
                 <ul className='header-link'>
                     {
                         nav.map(({path, label}) => (
