@@ -3,6 +3,7 @@ import {connect} from 'react-redux'
 import {getUser} from '../../redux/user/actions'
 import {showNotify} from '../../redux/notify/actions'
 import {homeBanner} from "../../services/homeService";
+import {ImageBox} from '../../components'
 
 class Home extends Component {
   constructor(props) {
