@@ -3,14 +3,14 @@ export default [{
     path: '/',
 }, {
     label: 'Blog',
-    path: './blog',
+    path: '/blog',
 }, {
     label: 'Awesome',
-    path: './awesome',
+    path: '/awesome',
 }, {
     label: 'About',
-    path: './about',
+    path: '/about',
 }, {
     label: 'Our Work',
-    path: './work',
+    path: '/work',
 },]

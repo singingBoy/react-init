@@ -1,9 +1,15 @@
+@import "../../style/theme.scss";
+
 .header-wrapper {
+  width: 100%;
   height: 60px;
   padding: 0 100px;
   display: flex;
   align-items: center;
   justify-content: space-between;
+  position: fixed;
+  top: 0;
+  z-index: 100;
 }
 
 .header-logo {
@@ -21,10 +27,22 @@
 
 .link-item {
   padding: 10px;
+  color: $font-main-color;
+  opacity: .7;
+  position: relative;
   &.active {
     color: #fff;
-    &::before {
-      content: '1111';
+    opacity: 1;
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      display: block;
+      background-color: #e91e63;
+      height: 1.5px;
+      width: 50%;
     }
   }
 }

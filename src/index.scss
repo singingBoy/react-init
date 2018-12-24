@@ -1,0 +1,14 @@
+@import "./style/theme.scss";
+@import "./style/common.scss";
+
+body {
+  margin: 0;
+  padding: 0;
+  color: $font-main-color;
+  -webkit-text-size-adjust: none;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}

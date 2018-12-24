@@ -1,0 +1,77 @@
+@import "../../style/theme.scss";
+
+.image-box{
+  width: 100%;
+  height: 600px;
+  background-size: cover;
+  position: relative;
+  &::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(0,0,0,.2);
+  }
+
+  .image-info{
+    width: 70%;
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+  }
+  .image-column{
+    &::after{
+      content: '';
+      display: block;
+      width: 50px;
+      height: 2px;
+      background-color: $block-color;
+      margin: 10px auto;
+    }
+  }
+  .image-description{
+    color: #fff;
+    width: 400px;
+    margin: 0 auto;
+    line-height: 1.5;
+  }
+  .image-title{
+    color: #fff;
+    font-weight: 600;
+    font-size: 45px;
+    margin: 20px auto;
+  }
+  .image-footer{
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    padding: 30px 40px;
+  }
+  .user-name{
+    color: #fff;
+    font-size: 12px;
+    font-weight: 600;
+  }
+  .user-tags{
+    font-size: 10px;
+  }
+  .user-icon{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 10px;
+  }
+  .time-comments{
+    font-size: 12px;
+    span:nth-child(n){
+      margin-right: 10px;
+    }
+    span:last-child{
+      margin-right: 0;
+    }
+  }
+}

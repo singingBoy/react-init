@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
 import nav from './nav-data';
+import { withRouter } from "react-router";
 import { Link } from "react-router-dom";
 import './header.scss';
 
-export default class Header extends Component{
+class Header extends Component{
     constructor(props) {
         super(props);
         this.state = {
@@ -11,14 +12,14 @@ export default class Header extends Component{
         }
     }
     render() {
-        const { activeNav } = this.state;
+        const { location } = this.props;
         return(
             <header className='header-wrapper'>
                 <div className='header-logo'></div>
                 <ul className='header-link'>
                     {
                         nav.map(({path, label}) => (
-                            <li className={`link-item ${ activeNav === label ? 'active':''}`} key={path}>
+                            <li className={`link-item ${ location.pathname === path ? 'active':''}`} key={path}>
                                 <Link to={path}>{label}</Link>
                             </li>
                         ))
@@ -28,3 +29,5 @@ export default class Header extends Component{
         )
     }
 }
+
+export default withRouter(Header);
