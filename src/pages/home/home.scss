@@ -1,0 +1,19 @@
+@import "../../style/theme";
+
+.home-wrapper {
+  .home-banner {
+    height: 600px;
+    margin-bottom: 35px;
+  }
+  .topic-image {
+    background-size: cover;
+    width: 100%;
+    height: 100%;
+  }
+  .topic-list .image-title {
+    font-size: 30px;
+  }
+  .topic-list .image-description {
+    font-size: 14px;
+  }
+}

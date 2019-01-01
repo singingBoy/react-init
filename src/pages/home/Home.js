@@ -4,8 +4,12 @@ import {getUser} from '../../redux/user/actions'
 import {showNotify} from '../../redux/notify/actions'
 import {homeBanner} from "../../services/homeService";
 import {ImageBox} from '../../components';
+import GridList from '@material-ui/core/GridList';
+import GridListTile from '@material-ui/core/GridListTile';
+import './home.scss';
+import { getBg } from './topic.theme';
 
-import {bannerData} from './data';
+import {bannerData, topics} from './data';
 
 class Home extends Component {
   constructor(props) {
@@ -32,9 +36,18 @@ class Home extends Component {
       ...bannerData,
     };
     return (
-      <section>
-        <ImageBox {...imageData} />
+      <section className='home-wrapper'>
+        <div className='home-banner'>
+          <ImageBox {...imageData} />
+        </div>
 
+        <GridList cellHeight={500} cols={3} spacing={0}>
+          {topics.map((tile, index) => (
+            <GridListTile key={tile.id} cols={tile.cols || 1}>
+              <ImageBox {...tile} bg={getBg(index)}/>
+            </GridListTile>
+          ))}
+        </GridList>
         <button onClick={() => showNotify({
           message: '呦呦呦!'
         })}>点击提示{user.name}</button>
